@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form class="form-main">
+        <input type="text" class="input-main">
+        <button class="button-main">ENTER</button>
+    </form>
+    <div class="output"></div>
+    <script>
+
+        let button = document.querySelector('button')
+        let word = 'макака'
+        let tamplate = []
+        let output = document.querySelector('.output')
+        button.addEventListener('click', clickEvent)
+        for (let i = 0; i < word.length; i++) {
+            tamplate.push('_')
+
+        }
+        function clickEvent(event) {
+            event.preventDefault()
+            let input = document.querySelector('input').value
+
+            for (let i = 0; i < word.length; i++) {
+                if (input == word[i]) {
+                    tamplate[i] = input
+
+                }
+                console.log(word[i])
+            }
+        }
+
+        function displayOutput(value) {
+            output.textContent = value.join(' ')
+
+        }
+        displayOutput(tamplate)
+
+    </script>
+</body>
+
+</html>
