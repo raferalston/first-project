@@ -18,32 +18,31 @@
 
         let button = document.querySelector('button')
         let word = 'макака'
-        let tamplate = []
+        let template = []
         let output = document.querySelector('.output')
         button.addEventListener('click', clickEvent)
         for (let i = 0; i < word.length; i++) {
-            tamplate.push('_')
-
+            template.push('_')
         }
+
         function clickEvent(event) {
             event.preventDefault()
             let input = document.querySelector('input').value
-
+            // console.log(input);
             for (let i = 0; i < word.length; i++) {
                 if (input == word[i]) {
-                    tamplate[i] = input
-
+                    template[i] = input
                 }
-                console.log(word[i])
             }
+            displayOutput(template)
         }
 
         function displayOutput(value) {
             output.textContent = value.join(' ')
-
         }
-        displayOutput(tamplate)
 
+        displayOutput(template)
+        console.log('done')
     </script>
 </body>
 
